@@ -51,14 +51,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Apple"
-            android:textSize="50dp" />
+            android:text="I am trying to understand the reason why she left me"
+            android:textSize="30dp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginStart="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
             android:background="@color/colorPrimary" />
 
         <android.support.v7.widget.AppCompatTextView
@@ -71,19 +71,6 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="20dp"
-        android:gravity="bottom|center">
-
-        <ImageView
-            android:id="@+id/game_mic_on"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/ic_launcher" />
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -96,6 +83,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="다음 스테이지로"
-            android:visibility="gone" />
+            android:visibility="gone"/>
     </LinearLayout>
 </RelativeLayout>
