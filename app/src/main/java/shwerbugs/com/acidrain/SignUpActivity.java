@@ -47,7 +47,6 @@ public class SignUpActivity extends AppCompatActivity
         signUPConfirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
             }
         });
     }
