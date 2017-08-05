@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -20,6 +21,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import shwerbugs.com.acidrain.R;
@@ -27,6 +29,11 @@ import shwerbugs.com.acidrain.client.SingletonRequestQueue;
 
 
 public class SignUpFragment extends Fragment {
+    @BindView(R.id.login_id)
+    EditText login_id;
+    @BindView(R.id.login_pw)
+    EditText login_pw;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,8 +46,8 @@ public class SignUpFragment extends Fragment {
     void signUp() {
         String url ="http://acidrain.azurewebsites.net/users/";
         Map<String, String> params = new HashMap<String, String>();
-        params.put("name", "guni");
-        params.put("password", "1111");
+        params.put("name", login_id.getText().toString());
+        params.put("password", login_pw.getText().toString());
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url,new JSONObject(params),
                 new Response.Listener<JSONObject>() {
                     @Override

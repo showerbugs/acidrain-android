@@ -11,9 +11,6 @@ import android.widget.Button;
 
 import shwerbugs.com.acidrain.R;
 
-/**
- * Created by kdaey on 2017-08-05.
- */
 
 public class MainFragment extends Fragment {
     @Nullable
