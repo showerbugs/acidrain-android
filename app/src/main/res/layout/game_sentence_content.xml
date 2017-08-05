@@ -19,18 +19,18 @@
             android:gravity="right"
             android:orientation="horizontal">
 
-            <android.support.v7.widget.AppCompatTextView
+            <TextView
                 android:id="@+id/game_level"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="급수" />
 
-            <android.support.v7.widget.AppCompatTextView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" / " />
 
-            <android.support.v7.widget.AppCompatTextView
+            <TextView
                 android:id="@+id/game_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <android.support.v7.widget.AppCompatTextView
+        <TextView
             android:id="@+id/game_word"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
             android:layout_marginStart="10dp"
             android:background="@color/colorPrimary" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <TextView
             android:id="@+id/game_feedback"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
         android:layout_alignParentEnd="true"
         android:gravity="bottom">
 
-        <android.support.v7.widget.AppCompatButton
+        <Button
             android:id="@+id/game_next_stage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
