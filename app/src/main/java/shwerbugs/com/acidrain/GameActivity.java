@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import shwerbugs.com.acidrain.utils.AppConstants;
+
 /**
  * Created by kdaey on 2017-08-05.
  */
@@ -13,5 +15,15 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_activity);
+        Bundle bundle = getIntent().getExtras();
+        int type = bundle.getInt(AppConstants.GAME_TYPE);
+        int fragmentId = R.layout.game_word_content;
+//        switch (type) {
+//            case :
+//                fragmentId = R.layout.game_word_content;
+//                break;
+//            default:
+//                break;
+//        }
     }
 }

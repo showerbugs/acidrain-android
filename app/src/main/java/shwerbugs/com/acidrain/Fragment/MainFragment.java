@@ -1,4 +1,4 @@
-package shwerbugs.com.acidrain.Fragment;
+package shwerbugs.com.acidrain.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

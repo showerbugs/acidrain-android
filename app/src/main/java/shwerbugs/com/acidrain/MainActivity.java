@@ -13,7 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import shwerbugs.com.acidrain.Fragment.MainFragment;
+import shwerbugs.com.acidrain.fragment.MainFragment;
 
 
 public class MainActivity extends AppCompatActivity
