@@ -2,12 +2,17 @@ package acidrain.hackaton.showerbug.acidrainfinal.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.microsoft.bing.speech.SpeechClientStatus;
 import com.microsoft.cognitiveservices.speechrecognition.ISpeechRecognitionServerEvents;
 import com.microsoft.cognitiveservices.speechrecognition.MicrophoneRecognitionClient;
@@ -15,7 +20,13 @@ import com.microsoft.cognitiveservices.speechrecognition.RecognitionResult;
 import com.microsoft.cognitiveservices.speechrecognition.SpeechRecognitionMode;
 import com.microsoft.cognitiveservices.speechrecognition.SpeechRecognitionServiceFactory;
 
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import acidrain.hackaton.showerbug.acidrainfinal.R;
+import acidrain.hackaton.showerbug.acidrainfinal.client.SingletonRequestQueue;
 
 
 /**
@@ -46,7 +57,7 @@ public class GameSentenceFragment extends Fragment {
                 micClient.startMicAndRecognition();
             }
         });
-
+        fetchSentences();
         return view;
     }
 
@@ -74,4 +85,22 @@ public class GameSentenceFragment extends Fragment {
             //nothing
         }
     };
+
+    private void fetchSentences(){
+        String url ="http://acidrain.azurewebsites.net/sentences?assessment_type=sentence&difficulty=1&sentence_count=15";
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url,null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d(GameSentenceFragment.class.getSimpleName(), response.toString());
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(GameSentenceFragment.class.getSimpleName(), error.toString());
+                    }
+                });
+        SingletonRequestQueue.getInstance(getActivity()).addToRequestQueue(request);
+    }
 }
