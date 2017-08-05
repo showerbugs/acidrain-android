@@ -16,36 +16,13 @@ import com.microsoft.cognitiveservices.speechrecognition.SpeechRecognitionServic
 
 import acidrain.hackaton.showerbug.acidrainfinal.fragment.MainFragment;
 
-public class MainActivity extends Activity implements ISpeechRecognitionServerEvents {
+public class MainActivity extends Activity {
     private Activity activity;
-    DataRecognitionClient dataClient = null;
-    MicrophoneRecognitionClient micClient = null;
-    int m_waitSeconds;
-    int getWaitSecond(){
-        return 20;
-//        return 200;
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         activity = this;
-        TextView v = (TextView)findViewById(R.id.ddd);
-        v.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String subscriptionKey = "69971df45fcf4deab367f459badab817";
-                micClient = SpeechRecognitionServiceFactory.createMicrophoneClient(
-                        activity,
-                        SpeechRecognitionMode.ShortPhrase,
-                        "en-us",
-                        mCallback,
-                        subscriptionKey);
-                micClient.setAuthenticationUri("");
-                micClient.startMicAndRecognition();
-            }
-        });
-
 
         if (findViewById(R.id.fragment_container) != null) {
             if (savedInstanceState != null) {
@@ -54,55 +31,5 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
             MainFragment firstFragment = new MainFragment();
             getFragmentManager().beginTransaction().add(R.id.fragment_container, firstFragment).commit();
         }
-    }
-    ISpeechRecognitionServerEvents mCallback = new ISpeechRecognitionServerEvents() {
-        @Override
-        public void onPartialResponseReceived(String s) {
-
-        }
-
-        @Override
-        public void onFinalResponseReceived(RecognitionResult recognitionResult) {
-
-        }
-
-        @Override
-        public void onIntentReceived(String s) {
-
-        }
-
-        @Override
-        public void onError(int i, String s) {
-
-        }
-
-        @Override
-        public void onAudioEvent(boolean b) {
-
-        }
-    };
-    @Override
-    public void onPartialResponseReceived(String s) {
-
-    }
-
-    @Override
-    public void onFinalResponseReceived(RecognitionResult recognitionResult) {
-
-    }
-
-    @Override
-    public void onIntentReceived(String s) {
-
-    }
-
-    @Override
-    public void onError(int i, String s) {
-
-    }
-
-    @Override
-    public void onAudioEvent(boolean b) {
-
     }
 }
