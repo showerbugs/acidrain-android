@@ -2,10 +2,12 @@ package acidrain.hackaton.showerbug.acidrainfinal.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -19,11 +21,17 @@ import java.util.Map;
 
 import acidrain.hackaton.showerbug.acidrainfinal.R;
 import acidrain.hackaton.showerbug.acidrainfinal.client.SingletonRequestQueue;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
 public class SignUpFragment extends Fragment {
+    @BindView(R.id.login_id)
+    EditText login_id;
+    @BindView(R.id.login_pw)
+    EditText login_pw;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.content_signup, container, false);
@@ -35,8 +43,8 @@ public class SignUpFragment extends Fragment {
     void signUp() {
         String url ="http://acidrain.azurewebsites.net/users/";
         Map<String, String> params = new HashMap<String, String>();
-        params.put("name", "guni");
-        params.put("password", "1111");
+        params.put("name", login_id.getText().toString());
+        params.put("password", login_pw.getText().toString());
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url,new JSONObject(params),
                 new Response.Listener<JSONObject>() {
                     @Override

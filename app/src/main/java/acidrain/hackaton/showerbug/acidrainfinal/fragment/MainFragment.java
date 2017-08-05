@@ -10,9 +10,6 @@ import android.widget.Button;
 
 import acidrain.hackaton.showerbug.acidrainfinal.R;
 
-/**
- * Created by kdaey on 2017-08-05.
- */
 
 public class MainFragment extends Fragment {
     @Override
