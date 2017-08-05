@@ -25,7 +25,11 @@ public class MainFragment extends Fragment {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                GameChooserFragment newFragment = new GameChooserFragment();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, newFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
 
@@ -33,17 +37,10 @@ public class MainFragment extends Fragment {
         signUPBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Create fragment and give it an argument specifying the article it should show
                 SignUpFragment newFragment = new SignUpFragment();
-
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-
-// Replace whatever is in the fragment_container view with this fragment,
-// and add the transaction to the back stack so the user can navigate back
                 transaction.replace(R.id.fragment_container, newFragment);
                 transaction.addToBackStack(null);
-
-// Commit the transaction
                 transaction.commit();
             }
         });

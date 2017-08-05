@@ -19,7 +19,7 @@
         android:layout_marginTop="?attr/actionBarSize"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_menu_camera" />
+        android:src="@drawable/acidrain_logo" />
 
     <LinearLayout
         android:id="@+id/login_id_container"
