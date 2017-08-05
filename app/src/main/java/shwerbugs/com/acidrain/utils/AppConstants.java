@@ -5,9 +5,9 @@ package shwerbugs.com.acidrain.utils;
  */
 
 public class AppConstants {
-    public static int GAME_WORD = 1;
-    public static int GAME_SENTENCE = 2;
-    public static int GAME_ACIDRAIN = 3;
+    public static final int GAME_WORD = 1;
+    public static final int GAME_SENTENCE = 2;
+    public static final int GAME_ACIDRAIN = 3;
 
-    public static String GAME_TYPE = "game_type";
+    public static final String GAME_TYPE = "game_type";
 }

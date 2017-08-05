@@ -18,12 +18,18 @@ public class GameActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         int type = bundle.getInt(AppConstants.GAME_TYPE);
         int fragmentId = R.layout.game_word_content;
-//        switch (type) {
-//            case :
-//                fragmentId = R.layout.game_word_content;
-//                break;
-//            default:
-//                break;
-//        }
+        switch (type) {
+            case AppConstants.GAME_WORD :
+                fragmentId = R.layout.game_word_content;
+                break;
+            case AppConstants.GAME_SENTENCE :
+                fragmentId = R.layout.game_word_content;
+                break;
+            case AppConstants.GAME_ACIDRAIN :
+                fragmentId = R.layout.game_word_content;
+                break;
+            default:
+                break;
+        }
     }
 }
