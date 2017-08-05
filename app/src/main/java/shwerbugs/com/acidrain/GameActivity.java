@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 
+import shwerbugs.com.acidrain.fragment.GameSentenceFragment;
 import shwerbugs.com.acidrain.fragment.GameWordFragment;
 import shwerbugs.com.acidrain.utils.AppConstants;
 
@@ -25,7 +26,7 @@ public class GameActivity extends AppCompatActivity {
                 fragment = new GameWordFragment();
                 break;
             case AppConstants.GAME_SENTENCE:
-                fragment = new GameWordFragment();
+                fragment = new GameSentenceFragment();
                 break;
             case AppConstants.GAME_ACIDRAIN:
                 fragment = new GameWordFragment();
