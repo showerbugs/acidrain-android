@@ -51,19 +51,11 @@ public class GameWordFragment extends Fragment {
 
     ISpeechRecognitionServerEvents mCallback = new ISpeechRecognitionServerEvents() {
         public void onPartialResponseReceived(final String response) {
-//            this.WriteLine("--- Partial result received by onPartialResponseReceived() ---");
-//            this.WriteLine(response);
-//            this.WriteLine();
             mFeedbackText.setText(mFeedbackText.getText() + "\n" + response);
         }
 
         public void onError(final int errorCode, final String response) {
-//            this._startButton.setEnabled(true);
-//            this.WriteLine("--- Error received by onError() ---");
-//            this.WriteLine("Error code: " + SpeechClientStatus.fromInt(errorCode) + " " + errorCode);
             mFeedbackText.setText(mFeedbackText.getText() + "\n" + "Error code: " + SpeechClientStatus.fromInt(errorCode) + " " + errorCode);
-//  this.WriteLine("Error text: " + response);
-//            this.WriteLine();
         }
 
         @Override
@@ -73,12 +65,12 @@ public class GameWordFragment extends Fragment {
 
         @Override
         public void onIntentReceived(String s) {
-
+            //nothing
         }
 
         @Override
         public void onAudioEvent(boolean b) {
-
+            //nothing
         }
     };
 }
